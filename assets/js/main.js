@@ -1,28 +1,17 @@
-/* Consegna:
-1. chiedi all’utente il cognome
-2. inseriscilo in un array con altri cognomi: ‘Bianchi’, ‘Neri’, ‘Rossi’, ‘Verdi’, ‘Gialli’
-3. stampa la lista ordinata alfabeticamente
-4. scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
-Consigli del giorno:
-Consultiamo la documentazione W3Schools o MDN per trovare i metodi javascript che possono esserci utili. */
-
-
 //Crea un array di cognomi
-var lista_cognomi = ["Bianchi", "Neri", "Rossi"];
+var lista_cognomi = ["Bianchi", "Neri", "Rossi", "Gialli"];
 //Chiedi all'utente il cognome
 var cognome = prompt("Inserisci il tuo cognome");
 //Pusha il cognome inserito nell'array di cognomi
+cognome = cognome.charAt(0).toUpperCase() + cognome.slice(1);
 lista_cognomi.push(cognome);
 //Ordina alfabeticamente i cognomi, incluso l'ultimo aggiunto
-lista_cognomi.sort;
+lista_cognomi.sort();
 //Stampa la lista ordinata alfabeticamente
 console.log(lista_cognomi);
 //scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
-var posizione = lista_cognomi.indexOf(cognome);
-console.log(posizione + cognome)
-
-/* 
-for (var i = 1; i < lista_cognomi.length; i++) {
-    console.log((lista_cognomi.indexOf(lista_cognomi[i])) + " " + cognome);
-
-} */
+var posizione = lista_cognomi.indexOf(cognome) + 1;
+console.log(posizione + " " + cognome)
+//HTML
+document.getElementById("saluto").innerHTML = ("Bentrovato, sig/ra " + cognome + "!")
+document.getElementById("here").innerHTML = ("Lei è in posizione " + posizione + " perché il suo cognome inizia per: " + cognome.charAt(0))
