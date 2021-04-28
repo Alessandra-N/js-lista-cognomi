@@ -2,8 +2,9 @@
 var lista_cognomi = ["Bianchi", "Neri", "Rossi", "Gialli"];
 //Chiedi all'utente il cognome
 var cognome = prompt("Inserisci il tuo cognome");
-//Pusha il cognome inserito nell'array di cognomi
+//Prende l'iniziale del nome e la trasforma in maiuscola, poi ci riattacca il resto del cognome
 cognome = cognome.charAt(0).toUpperCase() + cognome.slice(1);
+//Pusha il cognome inserito nell'array di cognomi
 lista_cognomi.push(cognome);
 //Ordina alfabeticamente i cognomi, incluso l'ultimo aggiunto
 lista_cognomi.sort();
